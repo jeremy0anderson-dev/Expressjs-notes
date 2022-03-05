@@ -1,25 +1,20 @@
 {
-  "name": "expressjs-notes",
+  "name": "note-taker",
   "version": "1.0.0",
-  "description": "Simple notes web application made with Node.js and Express.js. Utilizes routes, api calls",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeremy0anderson-dev/Expressjs-notes.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeremy0anderson-dev/Expressjs-notes/issues"
-  },
   "dependencies": {
-    "express": "^4.17.3",
-    "fs": "^0.0.1-security",
-    "uuid": "^8.3.2"
+    "ejs": "^3.1.6",
+    "express": "^4.16.4",
+    "fs": "^0.0.1-security"
   },
-  "homepage": "https://github.com/jeremy0anderson-dev/Expressjs-notes#readme"
+  "engines": {
+    "node": "16.x",
+    "npm": "6.x"
+  }
 }
