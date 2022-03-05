@@ -29,10 +29,13 @@ function createNote(body, notesArray){
 }
 function deleteId(id, notesArray) {
     //let current = fs.readFileSync(path.join(__dirname, 'db', 'db.json'), {encoding: "utf8"});
-    const newArr =  notesArray.filter(note => note.id !== id);
-    fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify({notes: newArr}));
-    console.log(newArr);
-    return newArr;
+    const toRemove =   notesArray.filter(note => note.id === id)[0];
+    const indx = (notesArray.indexOf(toRemove));
+    notesArray.splice(indx, 1);
+    console.log(notesArray);
+    fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify({notes: notesArray}, null, 2));
+    console.log(notes);
+    //console.log(fs.readFileSync(path.join(__dirname, "db", "db.json"),{encoding: "utf-8"}));
 /////////////////////////////////////////////
 }
 
@@ -48,7 +51,6 @@ app.route('/api/notes/:id')
           res.send(filterId(req.params.id, notes));
     })
     .delete((req, res) =>{
-          const body = req.body;
          res.send(deleteId(req.params.id, notes));
     });
 app.route('/api/notes')
