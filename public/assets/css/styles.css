@@ -60,6 +60,13 @@ body {
   border-top-left-radius: 0;
 }
 
+.list-group-item span{
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+}
 .list-item-title {
   display: inline-block;
   width: 75%;

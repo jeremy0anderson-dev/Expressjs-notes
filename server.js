@@ -32,10 +32,9 @@ function deleteId(id, notesArray) {
     const toRemove =   notesArray.filter(note => note.id === id)[0];
     const indx = (notesArray.indexOf(toRemove));
     notesArray.splice(indx, 1);
-    console.log(notesArray);
     fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify({notes: notesArray}, null, 2));
-    console.log(notes);
     //console.log(fs.readFileSync(path.join(__dirname, "db", "db.json"),{encoding: "utf-8"}));
+      return notesArray;
 /////////////////////////////////////////////
 }
 
@@ -64,4 +63,4 @@ app.route('/api/notes')
 /////listener//////////
 app.listen(PORT, () =>{
       console.log("listening on "+ PORT);
-})
+});
